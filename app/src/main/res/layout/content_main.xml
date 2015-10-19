@@ -21,18 +21,31 @@
         android:textColor="@color/primary"
         android:textSize="16sp" />
 
+    <TextView
+        android:paddingBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/F1"
+        android:textSize="16sp"/>
     <EditText
         android:id="@+id/voltage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/box"
         android:ems="10"
+        android:textCursorDrawable="@null"
         android:gravity="center_horizontal"
         android:hint="@string/F1"
         android:inputType="number"
         android:padding="10dp"
+        android:layout_marginBottom="10dp"
         android:textColor="@color/text"
         android:textColorHint="@color/hint_text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/F2"/>
 
     <EditText
         android:id="@+id/current"
@@ -41,12 +54,19 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/box"
         android:ems="10"
+        android:layout_marginBottom="10dp"
+        android:textCursorDrawable="@null"
         android:gravity="center_horizontal"
         android:hint="@string/F2"
         android:inputType="number"
         android:padding="10dp"
         android:textColor="@color/text"
         android:textColorHint="@color/hint_text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/F3"/>
 
     <EditText
         android:id="@+id/resistance"
@@ -55,6 +75,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/box"
         android:ems="10"
+        android:textCursorDrawable="@null"
         android:gravity="center_horizontal"
         android:hint="@string/F3"
         android:inputType="number"
@@ -71,7 +92,6 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:gravity="center">
 
             <Button
@@ -102,11 +122,16 @@
     </LinearLayout>
     <TextView
         android:layout_marginTop="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:layout_gravity="center"
         android:id="@+id/message"
-        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HELLO WORLD!"/>
+        android:background="@drawable/box"
+        />
 
 
 </LinearLayout>
