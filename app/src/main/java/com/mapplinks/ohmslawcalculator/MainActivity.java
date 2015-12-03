@@ -12,11 +12,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView  message;
     EditText voltage, current, resistance;
     Button calc, reset;
+
+    String projectToken = "e3861f14fc3766a4a858c38abde22023"; // e.g.: "1ef7e30d2a58d27f4b90c42e31d6d7ad"
+
 
     String law = "Ohm's Law states that V=I/R\n";
 
@@ -26,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final MixpanelAPI mixpanel = MixpanelAPI.getInstance(this, projectToken);
 
         voltage = (EditText) findViewById(R.id.voltage);
         current = (EditText) findViewById(R.id.current);
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 String A = current.getText().toString();
                 String R=resistance.getText().toString();
                 calculate(V, A ,R);
+                mixpanel.track("Calculate");
                 keyboardHide();
             }
         });
@@ -130,9 +138,9 @@ void calculate(String V, String A, String R){
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
